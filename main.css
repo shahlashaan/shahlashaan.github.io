@@ -1,0 +1,25 @@
+body {
+  padding: 0;
+  margin: 0;
+  background: #f2f6e9;
+}
+ 
+    /* Set black background color, white text and some padding */
+footer {
+  background-color: #555;
+  color: white;
+  padding: 10px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+.header {
+  padding: 60px;
+  text-align: center;
+  background: #1abc9c;
+  color: white;
+  font-size: 30px;
+}
+
