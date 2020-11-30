@@ -76,14 +76,14 @@ def details(postID):
 	all_string = "<h1> Question:"+ question_title +" </h1>"+ x["items"][0]['body']
 	for i in range(total_answers):
 		all_string = all_string + "<h1> answer "+str(i) + " </h1>" + y["items"][i]['body']
-		# id = y['items'][i]['answer_id']
-		# comment =SITE.fetch('answers/{ids}/comments', ids=[id], filter='withbody')
-		# total_comments=len(comment['items'])
-		# for k in range(total_comments):
-		# 	comment_id = comment['items'][k]['comment_id']
-		# 	comment_text = SITE.fetch('comments/{ids}', ids=[comment_id], filter='withbody')
-		# 	all_string = all_string + "<h1> comment "+str(k) + " </h1>" + comment_text['items'][0]['body']
-			# print(comment_text['items'][0]['body'])
+		id = y['items'][i]['answer_id']
+		comment =SITE.fetch('answers/{ids}/comments', ids=[id], filter='withbody')
+		total_comments=len(comment['items'])
+		for k in range(total_comments):
+			comment_id = comment['items'][k]['comment_id']
+			comment_text = SITE.fetch('comments/{ids}', ids=[comment_id], filter='withbody')
+			all_string = all_string + "<h1> comment "+str(k) + " </h1>" + comment_text['items'][0]['body']
+			print(comment_text['items'][0]['body'])
 
 	return all_string
 
