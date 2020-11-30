@@ -77,7 +77,7 @@ def details(postID):
 	all_string = "<h1>"+str(quest_score)+" Question:"+ question_title  +" </h1>"+ x["items"][0]['body']
 	for i in range(total_answers):
 		ans_score = y['items'][i]['score']
-		all_string = all_string + "<h1> answer "+str(i+1)+ str(ans_score) + " </h1>" + y["items"][i]['body']
+		all_string = all_string + "<h1>"+ str(ans_score)+" answer "+str(i+1) + " </h1>" + y["items"][i]['body']
 		id = y['items'][i]['answer_id']
 		comment =SITE.fetch('answers/{ids}/comments', ids=[id], filter='withbody')
 		total_comments=len(comment['items'])
