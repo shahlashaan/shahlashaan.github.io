@@ -48,9 +48,9 @@ newestLink,newestQuestion = get_details(newest_url)
 
 
 
-myDict['mostVotedLink'] = mostVotedLink
+myDict['Most Voted Link'] = mostVotedLink
 # myDict['mostVotedQuestion'] = mostVotedQuestion
-myDict['newestLink'] = newestLink
+myDict['Newest Link'] = newestLink
 # myDict['newestQuestion'] = newestQuestion
 
 # print(myDict)
@@ -74,10 +74,16 @@ def details(postID):
 	total_answers = x["items"][0]['answer_count']
 	question_title = x["items"][0]['title']
 	all_string = "<h1> Question:"+ question_title +" </h1>"+ x["items"][0]['body']
-	for i in range(total_answers-1):
-		all_string = all_string + "<h1> answer "+str(i+1) + " </h1>" + y["items"][i]['body']
-		i+=1
-
+	for i in range(total_answers):
+		all_string = all_string + "<h1> answer "+str(i) + " </h1>" + y["items"][i]['body']
+		# id = y['items'][i]['answer_id']
+		# comment =SITE.fetch('answers/{ids}/comments', ids=[id], filter='withbody')
+		# total_comments=len(comment['items'])
+		# for k in range(total_comments):
+		# 	comment_id = comment['items'][k]['comment_id']
+		# 	comment_text = SITE.fetch('comments/{ids}', ids=[comment_id], filter='withbody')
+		# 	all_string = all_string + "<h1> comment "+str(k) + " </h1>" + comment_text['items'][0]['body']
+			# print(comment_text['items'][0]['body'])
 
 	return all_string
 
